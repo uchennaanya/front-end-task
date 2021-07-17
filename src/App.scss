@@ -1,11 +1,82 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 0.2px 9px 0 #f1f1f1;
+}
+
+.iconify {
+  margin: 0 0.3rem;
+  color: #609FFF;
+}
+
+.left-pane {
+  .personal-data {
+    box-shadow: 0 8px 8px 0 #f1f1f1;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    margin-left: 11.5em;
+    outline: none;
+    transition-duration: 0.3s;
+    border: 1px solid;
+    cursor: pointer;
+  }
+  button {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background: #609FFF;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    margin-left: 85%;
+    font-weight: lighter;
+  }
+.todo {
+  padding: 1rem; margin: 2rem 0; box-shadow: 0 9px 20px 0 #f1f1f1;
+}
+
+.date {
+  display: flex; justify-items: center;
+  .month {
+    text-align: left;
+    display: block;
+    margin-top: 5px
+}
+.day {
+    margin-left: 5rem;
+    font-size:'30px';
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 15px
+}
+.day-number {
+  font-size: 40px;
+}
+}
+  .todolist {
+      border-bottom: 0.4px solid #ccc;
+      padding: 1rem 0 0.5rem 0;
+  }
+}
 
 .card-wrapper {
   display: flex;
+  margin: 1rem;
   .card {
+    box-shadow: 0 0.3px 20px 0 #f1f1f1;
     padding: 1rem;
     margin: 1rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
   }
   .number {
     color: rgba(25, 25, 29, 1);
@@ -19,19 +90,36 @@
   .icon{
     margin-left: 5em
   }
-
 }
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
 
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+table{
+  border-collapse: collapse;
+  margin-left: 2rem;
+  font-weight: 500;
+  box-shadow: 0 9px 9px 0 #f1f1f1;
+  width: 94%;
+  tr{
+
+    border-bottom: 0.4px solid #f1f1f1;
+  }
+  th {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: #878592;
+    padding: 0.4rem 0;
+  }
+  td {
+    font-family: Google Sans;
+    font-size: 1rem;
+    margin: 9rem;
+    padding: 0.4rem 0;
+    font-weight: light;
+    color: #25213B;
+  }
+  .span {
+    font-size: small;
+    color: #878592;
+  }
+}
+

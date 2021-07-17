@@ -4,6 +4,12 @@ import './index.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fas } from '@fortawesome/free-solid-svg-icons'
+// import { faTwitter, faFontAwesome } from '@fortawesome/free-brand-svg-icons'
+
+// library.add(fas, faTwitter, faFontAwesome)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

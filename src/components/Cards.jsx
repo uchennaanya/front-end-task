@@ -1,13 +1,19 @@
 import React from 'react'
 
-const Cards = ({number, description, icon}) => {
+
+const Cards = ( { dataList, index } ) => {
     return (
-        <div className="card-wrapper">
-            <div className="card">
-                <span className="number">{number}</span> <i className="icon fa fa-info">i</i>
-                <span className="description">{description}</span>
-            </div>
-        </div>
+        dataList.map(
+            dataItems => (
+                <div className="card" key={dataItems.toString()} >
+                    <span className="number">
+                        {dataItems.number}
+                    </span>
+                    <span className="icon iconify" data-icon="ant-design:info-circle-outlined" data-inline="false"></span>
+                    <span className="description" >{dataItems.desc}</span>
+                </div>
+            )
+        )
     )
 }
 
