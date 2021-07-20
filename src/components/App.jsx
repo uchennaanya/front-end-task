@@ -1,8 +1,13 @@
+
 import '../App.scss';
 import Cards from './Cards'
 import LeftPane from './LeftPane'
 import Header from './Header'
 import Table from './Table'
+import Breadcrumb from './Breadcrumb'
+import AddToDo from './AddToDo'
+import axios from 'axios'
+import { useState, useEffect } from 'react';
 
 const data = [
   {number: 22441, desc: 'Public repos'},
@@ -11,24 +16,49 @@ const data = [
   {number: 11334, desc: 'Following'}
 ]
 
-const deleteItem = () => {
-  data.filter(delet => delet)
-}
 
 function App() {
+
+  const [data, setData] = useState()
+
+  useEffect(async () => {
+    const result = await axios(`https://api.github.com/users/username`)
+    console.log(result)
+    // https://api.github.com/users/username/repos?type=all&sort=updated
+    setData(result)
+  }, [])
+
   return (
     <>
       <Header />
-      <div style={{display: 'flex', margin: '1rem 1.5rem'}}>
-      <LeftPane />
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+      <Breadcrumb />
+
+      <div className="container-fluid" style={{
+        display: 'flex'
+      }}>
+
+        <LeftPane />
+
+        <div className="col-md-9" style={{
+          display: 'flex',
+          flexDirection: 'column',
+          flexWrap: 'wrap'
+        }}>
           <div className="card-wrapper">
             <Cards dataList={data} />
           </div>
-          <Table />
-        </div>
-      </div>
+          <div style={{
+            maxWidth: '69.5vw',
+            margin: '1rem 0 0 1rem',
+            boxShadow: '0 3px 10px 0 #ccc'
+          }}>
+            <Table />
+          </div>
 
+        </div>
+
+      </div>
+      <AddToDo />
     </>
   );
 }

@@ -1,9 +1,17 @@
 import React from 'react'
 
 
-const Button = ({plus_sign, blue}) => {
+const Button = ({ value, dataTarget, dataToggle, myStyle }) => {
+
+    const className = `button btn-${myStyle}`
+
     return (
-        <button> {plus_sign} </button>
+        // <button className="custombutton classname" dataToggle="modal" dataTarget="#exampleModal" >
+        //     {value}
+        // </button>
+        <button className={className} data-bs-toggle="modal" data-bs-target="#exampleModal">
+            {value}
+        </button>
     )
 }
 

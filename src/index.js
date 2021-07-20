@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import "bootstrap/dist/css/bootstrap.min.css";
+// import { alerts, accordion, badge, breadcrumb, buttons, buttonGroup, cards, carousel, dropdowns, forms, inputGroup, images, figures, jumbotron, listGroup, modal, navs, navbar, overlays, pagination, popovers, progress, spinners, table, tables, tooltips, toasts } from 'bootstrap'
 
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fas } from '@fortawesome/free-solid-svg-icons'
-// import { faTwitter, faFontAwesome } from '@fortawesome/free-brand-svg-icons'
 
-// library.add(fas, faTwitter, faFontAwesome)
 
 ReactDOM.render(
   <React.StrictMode>
