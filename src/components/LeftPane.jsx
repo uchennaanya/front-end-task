@@ -1,8 +1,11 @@
-import React from 'react'
+import {useState} from 'react'
 import Todo from './Todo'
 
 
-const LeftPane = () => {
+const LeftPane = ({ profile_info }) => {
+
+    const [addTodo, setAddTodo] = useState('mamamaaa')
+
     return(
 
         <div className="left-pane col-md-3" style={{
@@ -31,11 +34,13 @@ const LeftPane = () => {
                 </p>
                 <p>
                     <span className="iconify" data-icon="ph:envelope-thin" data-inline="false">
-                    </span>&nbsp;uchennnaongit@gmail.com
+                    </span>&nbsp;martinsanya19@gmail.com
+                    {/* { profile_info.blog } */}
                 </p>
                 <p>
                     <span className="iconify" data-icon="mdi-light:map-marker" data-inline="false">
-                    </span> Aba Abia
+                    </span>Aba, Nigeria
+                    {/* {profile_info.location} */}
                 </p>
                 <p>
                     <span className="iconify" data-icon="fluent:notebook-24-regular" data-inline="false">
@@ -48,7 +53,7 @@ const LeftPane = () => {
             </div>
 
             <div className="to-do">
-                <Todo />
+                <Todo addTodo={addTodo} />
             </div>
         </div>
     )

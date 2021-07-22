@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Table = () => {
+const Table = ({ tableData }) => {
     return (
         <div className="table-responsive">
             <table className="table">
@@ -19,41 +19,51 @@ const Table = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <input type="checkbox" />
-                        </td>
-                        <td>
-                            <span style={{
-                                border: '1px solid green',
-                                borderRadius: '100%'
-                            }} className="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span>
-                        </td>
-                        <td>
-                            Martins Anya
-                        </td>
-                        <td>
-                            Abia <br />
-                            <span className="span">48 Igwebike St.</span>
-                        </td>
-                        <td>
-                            No issue
-                        </td>
-                        <td>
-                            <li>
-                                20 unique entries <br />
-                                <span className="span" >Homogenous</span>
-                            </li>
-                        </td>
-                        <td>
+                    {
+                        tableData.map( dt => (
+                            <tr>
+                                <td>
+                                    <input type="checkbox" />
+                                </td>
+                                <td>
+                                    <span style={{
+                                        border: '1px solid green',
+                                        borderRadius: '100%'
+                                    }} className="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span>
+                                </td>
+                                <td>
+                                    { dt.name}
+                                </td>
+                                <td>
+                                    {dt.description}<br />
+                                    <span className="span">48 Igwebike St.</span>
+                                </td>
+                                <td>
+                                   {dt.open_issues_count}
+                                </td>
+                                <td>
+                                    <li>
+                                        {dt.stargazers_count} <br />
+                                        <span className="span" >Homogenous</span>
+                                    </li>
+                                </td>
+                                <td>
+                                </td>
+                                <td colSpan="2">
+                                    <p style={{
+                                        display: 'flex',
+                                        alignItems: 'center'
+                                    }}>
+                                        <span className="iconify" data-icon="codicon:arrow-small-right" data-inline="false"></span>
+                                        {dt.forks}
+                                        <span className="iconify" data-icon="ph:dots-three-outline-vertical-fill" data-inline="false"></span>
+                                    </p>
 
-                        </td>
-                        <td colSpan="2">
-                            <span className="iconify" data-icon="codicon:arrow-small-right" data-inline="false"></span>
-                            Low risk
-                            <span className="iconify" data-icon="ph:dots-three-outline-vertical-fill" data-inline="false"></span>
-                        </td>
-                    </tr>
+                                </td>
+                            </tr>
+                            )
+                        )
+                    }
                 </tbody>
             </table>
         </div>

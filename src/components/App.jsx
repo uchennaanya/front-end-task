@@ -9,24 +9,38 @@ import AddToDo from './AddToDo'
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 
-const data = [
-  {number: 22441, desc: 'Public repos'},
-  {number: 10011, desc: 'Public gists'},
-  {number: 635, desc: 'Followers'},
-  {number: 11334, desc: 'Following'}
-]
+
+const tables = "https://api.github.com/users/uchennaanya/repos?type=all&sort=updated"
+
+const users = "https://api.github.com/users/uchennaanya"
 
 
 function App() {
+  const [secData, setSecData] = useState(null)
+  const [data, setData] = useState(null)
 
-  const [data, setData] = useState()
+  const fetchData = async () => {
+    const res = await axios(users)
+    setData(res.data)
+  }
 
-  useEffect(async () => {
-    const result = await axios(`https://api.github.com/users/username`)
-    console.log(result)
-    // https://api.github.com/users/username/repos?type=all&sort=updated
-    setData(result)
+  useEffect(() => {
+    fetchData()
   }, [])
+
+  console.log(data)
+
+// Table data;
+  const fetchSecData = async () => {
+    const res = await axios(tables)
+    setSecData(res.data)
+  }
+
+  useEffect(() => {
+    fetchSecData()
+  }, [])
+
+  console.log(secData)
 
   return (
     <>
@@ -37,7 +51,7 @@ function App() {
         display: 'flex'
       }}>
 
-        <LeftPane />
+        <LeftPane profile_info={data} />
 
         <div className="col-md-9" style={{
           display: 'flex',
@@ -45,18 +59,16 @@ function App() {
           flexWrap: 'wrap'
         }}>
           <div className="card-wrapper">
-            <Cards dataList={data} />
+            { data && <Cards dataList={data} /> }
           </div>
           <div style={{
             maxWidth: '69.5vw',
             margin: '1rem 0 0 1rem',
             boxShadow: '0 3px 10px 0 #ccc'
           }}>
-            <Table />
+            { secData && <Table tableData={secData} /> }
           </div>
-
         </div>
-
       </div>
       <AddToDo />
     </>

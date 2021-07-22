@@ -1,8 +1,8 @@
-import React from 'react'
+
 import Button from './Button'
 
 
-const AddToDo = () => {
+const AddTodo = ( { addTodo } ) => {
     return (
         <div className="add-todo">
             <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -16,7 +16,7 @@ const AddToDo = () => {
                         <div className="modal-body">
                             <p>Please write content of todo in input below!</p>
                             <form className="row g-3 needs-validation" noValidate>
-                                <input type="text" placeholder="Do something!" required id="validationCustom01" />
+                                <input type="text" value={addTodo} placeholder="Do something!" required id="validationCustom01" />
                                 <div className="valid-feedback">
                                     Looks good!
                                 </div>
@@ -35,4 +35,4 @@ const AddToDo = () => {
     )
 }
 
-export default AddToDo
+export default AddTodo
