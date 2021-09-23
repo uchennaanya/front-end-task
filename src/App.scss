@@ -1,5 +1,4 @@
 
-
 header {
   display: flex;
   justify-content: space-between;
@@ -42,7 +41,7 @@ header {
   color: rgb(48, 44, 44);
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus, textarea:focus, select:focus, button:focus{
   outline: none;
 }
 

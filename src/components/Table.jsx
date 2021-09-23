@@ -12,7 +12,7 @@ const Table = ({ tableData }) => {
                         <th>Name</th>
                         <th>Description</th>
                         <th>Open_Issue</th>
-                        <th>Home Page URL/ Stargazers_Count</th>
+                        <th>Home&nbsp;Page&nbsp;URL/ Stargazers_Count</th>
                         <th></th>
                         <th>Fork</th>
                         <th></th>
@@ -58,7 +58,6 @@ const Table = ({ tableData }) => {
                                         {dt.forks}
                                         <span className="iconify" data-icon="ph:dots-three-outline-vertical-fill" data-inline="false"></span>
                                     </p>
-
                                 </td>
                             </tr>
                             )

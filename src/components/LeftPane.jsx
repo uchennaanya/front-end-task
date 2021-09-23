@@ -1,10 +1,20 @@
-import {useState} from 'react'
+import React, { useState } from 'react'
 import Todo from './Todo'
+import AddTodo from './AddTodo'
 
 
 const LeftPane = ({ profile_info }) => {
 
-    const [addTodo, setAddTodo] = useState('mamamaaa')
+    const [todos, setTodos] = useState([])
+
+    const addTodos = (value) => {
+
+        setTodos([ ...todos, value ])
+
+
+
+        console.log(todos)
+    }
 
     return(
 
@@ -53,8 +63,9 @@ const LeftPane = ({ profile_info }) => {
             </div>
 
             <div className="to-do">
-                <Todo addTodo={addTodo} />
+                <Todo todos={ todos } />
             </div>
+            <AddTodo addTodos={addTodos} />
         </div>
     )
 }

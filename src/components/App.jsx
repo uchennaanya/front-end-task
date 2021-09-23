@@ -5,17 +5,16 @@ import LeftPane from './LeftPane'
 import Header from './Header'
 import Table from './Table'
 import Breadcrumb from './Breadcrumb'
-import AddToDo from './AddToDo'
 import axios from 'axios'
 import { useState, useEffect } from 'react';
 
 
 const tables = "https://api.github.com/users/uchennaanya/repos?type=all&sort=updated"
-
 const users = "https://api.github.com/users/uchennaanya"
 
 
 function App() {
+
   const [secData, setSecData] = useState(null)
   const [data, setData] = useState(null)
 
@@ -28,8 +27,6 @@ function App() {
     fetchData()
   }, [])
 
-  console.log(data)
-
 // Table data;
   const fetchSecData = async () => {
     const res = await axios(tables)
@@ -40,19 +37,14 @@ function App() {
     fetchSecData()
   }, [])
 
-  console.log(secData)
-
   return (
     <>
       <Header />
       <Breadcrumb />
-
       <div className="container-fluid" style={{
         display: 'flex'
       }}>
-
         <LeftPane profile_info={data} />
-
         <div className="col-md-9" style={{
           display: 'flex',
           flexDirection: 'column',
@@ -70,7 +62,6 @@ function App() {
           </div>
         </div>
       </div>
-      <AddToDo />
     </>
   );
 }

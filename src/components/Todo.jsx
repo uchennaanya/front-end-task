@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 
 
-const Todo = () => {
+const Todo = ({ todos }) => {
     const date = new Date()
     const year = date.getFullYear()
     const month = date.toLocaleString('en-us',{month:'short'})
@@ -17,10 +17,16 @@ const Todo = () => {
                 <span className="day"> {day} </span>
             </div>
             <div className="">
-                <p className="todolist">
-                    To&nbsp;do&nbsp;Title
-                </p>
-                <Button value="+" myStyle="add-btn" />
+                {
+                    todos.map(ele => (
+                        <p className="todolist">
+                            <li>
+                                { ele }
+                            </li>
+                        </p>
+                    ))
+                }
+                <Button value="+" myStyle="add-btn" type="submit" />
             </div>
         </div>
     )
