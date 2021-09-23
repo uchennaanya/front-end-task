@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Button = ({ value, type, myStyle }) => {
+const ButtonCancel = ({ value, type, myStyle }) => {
 
     const className = `button btn-${myStyle}`
 
@@ -12,4 +12,4 @@ const Button = ({ value, type, myStyle }) => {
     )
 }
 
-export default Button
+export default ButtonCancel

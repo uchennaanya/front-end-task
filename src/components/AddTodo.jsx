@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react'
 import Button from './Button'
+import ButtonCancel from './ButtonCancel'
 
 
 const AddTodo = ({ addTodos }) => {
@@ -47,7 +48,7 @@ const AddTodo = ({ addTodos }) => {
                                 <div className="modal-footer" style={{
                                 border: 'none'
                                 }}>
-                                    <Button value="Cancel" myStyle="cancel" />
+                                    <ButtonCancel value="Cancel" myStyle="cancel" />
                                     <Button value="Add" id="btn" myStyle="add" />
                                 </div>
                             </form>
