@@ -14,11 +14,11 @@ const AddTodo = ({ addTodos }) => {
         setValue('')
     }
 
-    const handleOnchange = (event) => {
-        event.preventDefault()
+    const handleOnchange = (e) => {
+        e.preventDefault()
 
-        setValue(event.target.value)
-      }
+        setValue(e.target.value)
+    }
 
     return (
         <div className="add-todo">
@@ -47,7 +47,7 @@ const AddTodo = ({ addTodos }) => {
                                 <div className="modal-footer" style={{
                                 border: 'none'
                                 }}>
-                                    <Button value="Cancel" myStyle="cancel" />
+                                    <Button value="Cancel" myStyle="cancel" data-bs-dismiss="modal" />
                                     <Button value="Add" id="btn" myStyle="add" />
                                 </div>
                             </form>
