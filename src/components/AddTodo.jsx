@@ -47,7 +47,7 @@ const AddTodo = ({ addTodos }) => {
                                 <div className="modal-footer" style={{
                                 border: 'none'
                                 }}>
-                                    <Button value="Cancel" myStyle="cancel" data-bs-dismiss="modal" />
+                                    <Button value="Cancel" myStyle="cancel" />
                                     <Button value="Add" id="btn" myStyle="add" />
                                 </div>
                             </form>
